@@ -4,28 +4,37 @@
 	<meta name="theme-color" content="#ffffff">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="description" content="">   
-    
-    <meta property="og:type" content="website">
+    <meta name="description" content="How to configure global /gitIgnore to ignore unwanted/IDE related folders/files.">   
+        
+    <meta property="article:published_time" content="2020-12-06">
+	<meta property="og:type" content="article">
     
 	<meta property="og:locale" content="en_US">	
-	<meta property="og:url" content="https://rajhiray.github.io/categories/posts/">	
-	<meta property="og:title" content="posts">
-	<meta property="og:image" content="https://rajhiray.github.io/categories/posts/">
-    <meta property="og:description" content="">
+	<meta property="og:url" content="https://rajhiray.github.io/post/configure-global-gitignore/">	
+	<meta property="og:title" content="Configure global .gitignore">
+	<meta property="og:image" content="https://rajhiray.github.io/post/configure-global-gitignore/global-git-ignore.jpg">
+    <meta property="og:description" content="How to configure global /gitIgnore to ignore unwanted/IDE related folders/files.">
     <meta property="og:site_name" content="Raj Hiray Blog">
     
+    <meta property="og:tags" content="GIT">
+    
+    <meta property="og:tags" content="VS2019">
+    
+    <meta property="og:tags" content="Productivity">
+    
 	<meta property="twitter:card" content="summary_large_image" >
-	<meta property="twitter:image" content="https://rajhiray.github.io/categories/posts/">
-	<meta property="twitter:title" content="posts">	
+	<meta property="twitter:image" content="https://rajhiray.github.io/post/configure-global-gitignore/global-git-ignore.jpg">
+	<meta property="twitter:title" content="Configure global .gitignore">	
 	<meta property="twitter:creator" content="@cezary_piatek">
-	<meta property="twitter:description" content="">
+	<meta property="twitter:description" content="How to configure global /gitIgnore to ignore unwanted/IDE related folders/files.">
 
-	<meta name="keywords" value="" />
+	<meta name="keywords" value="GIT, VS2019, Productivity" />
     <meta name="generator" content="Hugo 0.78.2" />
-    <title>posts &middot; Raj Hiray Blog</title>
+    <title>Configure global .gitignore &middot; Raj Hiray Blog</title>
     
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/a11y-dark.min.css">
     
     <link rel="stylesheet" href="https://rajhiray.github.io/css/style.css">
     <link rel="stylesheet" href="https://rajhiray.github.io/lib/gifplayer/gifplayer.css">
@@ -111,54 +120,61 @@
 			<div class="row">
 				<div id="post" class="col-sm-offset-1 col-sm-10 col-md-10 col-lg-8 ssg">
 
-
-<header>
-	<h1>Articles about: posts</a></h1>
-</header>
-
-
-	<div class="panel panel-default">
-		<div class="panel-header">
-			<h3>
-				<a href="https://rajhiray.github.io/post/configure-global-gitignore/">Configure global .gitignore</a>
-				<br>
-				<small>
-					<time>6 December 2020</time>
-				</small>
-			</h3>
-		</div>
-		<div class="panel-body">
+<main>
+	<article>
+		<header>
+			<h1>Configure global .gitignore</h1>
 			
-			<div class="splash-box">
-				<img src="https://rajhiray.github.io/post/configure-global-gitignore//global-git-ignore.jpg" width="100%" /><br/><br/>
-			</div>
-			
-			How do you treat files you don’t want to include in your commit?
-Write it in .gitignore, isn’t it?
-How you treat files you want to ignore in every git repository? always put file name in .gitignore?
-For example you are using Visual Studio 2019 IDE, VS19 will create .vs folder in your project folder. you always ignore these files in every single project you’re working on by configuring in project level or repository level .
-			
-				... <a href="https://rajhiray.github.io/post/configure-global-gitignore/">Read More</a>
-			
-		</div>
-		<div class="panel-footer">
-			
-			<small class="text-muted">
-				
-				
-					<a href="https://rajhiray.github.io/tags/git"><span class="label label-success">GIT</span></a>
-				
-					<a href="https://rajhiray.github.io/tags/vs2019"><span class="label label-success">VS2019</span></a>
-				
-					<a href="https://rajhiray.github.io/tags/productivity"><span class="label label-success">Productivity</span></a>
-				
-			</small>
-			
-		</div>
-	</div>
+		</header>
+		
+			<img src="global-git-ignore.jpg" width="100%" />
+			<br />
+		
+		<hr>
+<p>How do you treat files you don’t want to include in your commit?</p>
+<p>Write it in <code>.gitignore</code>, isn’t it?</p>
+<p>How you treat files you want to ignore in every git repository? <strong>always put file name in .gitignore?</strong></p>
+<p>For example you are using <code>Visual Studio 2019</code> IDE, VS19 will create .vs folder in your project folder.
+you always ignore these files in every single project you’re working on by configuring in project level or repository level .gitignore.</p>
+<p>I clone one repository and open in VS2019 and it started showing me a lot of changes,
+even if I hadn&rsquo;t add/modify single line.</p>
+<p>
+<a href="VS2019Changes.JPG"><img  src="VS2019Changes.JPG" alt="VS2019Changes"></a>
+</p>
+<p>Suppose, you are working with other developer and every developer use his favorite IDE.
+What happened?
+<strong>your .gitignore will get messy with list of file created by IDE.</strong></p>
+<p>If everyone would commit their <code>environment-specific</code> .gitignore rules, we’d have a long list to maintain! My repository doesn’t care about your editor configuration.</p>
+<p>There’s a better solution to this: a personal, <code>global .gitignore</code> file for all your repositories.</p>
+<p><strong>Step 1: check whether it’s configure or not use command below:</strong></p>
+<pre><code class="language-Bash">git config --get core.excludesfile
+</code></pre>
+<p>In my case when I ran it, my global exclude file configured to</p>
+<pre><code class="language-Bash">~/.gitignore_global
+</code></pre>
+<p>If you have already gitignore_global configured, you can add/modify more rules in same file.</p>
+<p><strong>Step 2: Configure global gitignore</strong></p>
+<p>If your global not yet configure, we can add new .gitignore_global.</p>
+<p>First, create a new .gitignore_global file in home directory (C:\Users\CurrentUser\) for your global rules.</p>
+<p>Next, open it with your text editor of choice and add whatever files and folders you always want to ignore.</p>
+<p>If your not sure about rules for your IDE check on <a href="https://github.com/github/gitignore">github .gitignore</a></p>
+<p>For Example - for <a href="https://github.com/github/gitignore/blob/master/VisualStudio.gitignore">Visual Studio .gitignore template</a>
+copy template rules into your .gitignore_global and save.</p>
+<p>Finally, configure git to use our newly created ~/.gitignore_global file.</p>
+<pre><code class="language-Bash">git config --global core.excludesfile '~/.gitignore_global'
+</code></pre>
+<p>command above will create and set global git ignore file to ~/.gitignore_global</p>
+<p>That’s it, no more pesky editor configuration in your commits!</p>
+    
+		
+	</article>
+	
+	
+</main>
 
-
-
+<div id="bottom-nav" class="text-center center-block">
+	<a href=" https://rajhiray.github.io/" class="btn btn-default"><i class="fa fa-home"></i> Home</a>
+</div>
 
 						  </div>
 					</div>
@@ -172,6 +188,9 @@ For example you are using Visual Studio 2019 IDE, VS19 will create .vs folder in
   <script src="https://cdn.jsdelivr.net/npm/story-show-gallery@2/dist/ssg.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
   
+  
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+		
   
   <script src="../../lib/gifplayer/jquery.gifplayer.js"></script>
   <script>
@@ -189,7 +208,7 @@ For example you are using Visual Studio 2019 IDE, VS19 will create .vs folder in
 		passthrough : {
 			twitter: {
 				via: "cezary_piatek",
-				hashtags: ""
+				hashtags: "GIT,VS2019,Productivity"
 			}
 		}
 	}
