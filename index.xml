@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Raj Hiray Blog</title>
-    <link>http://localhost:1313/</link>
+    <link>https://rajhiray.github.io/</link>
     <description>Recent content on Raj Hiray Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Dec 2020 15:31:31 +0530</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Dec 2020 15:31:31 +0530</lastBuildDate><atom:link href="https://rajhiray.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First Post</title>
-      <link>http://localhost:1313/post/my-first-post/my-first-post/</link>
+      <link>https://rajhiray.github.io/post/my-first-post/my-first-post/</link>
       <pubDate>Sun, 06 Dec 2020 15:31:31 +0530</pubDate>
       
-      <guid>http://localhost:1313/post/my-first-post/my-first-post/</guid>
+      <guid>https://rajhiray.github.io/post/my-first-post/my-first-post/</guid>
       <description>TEST Content test</description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>http://localhost:1313/projects/</link>
+      <link>https://rajhiray.github.io/projects/</link>
       <pubDate>Sun, 06 Dec 2020 15:31:31 +0530</pubDate>
       
-      <guid>http://localhost:1313/projects/</guid>
+      <guid>https://rajhiray.github.io/projects/</guid>
       <description>PROJECTS </description>
     </item>
     
     <item>
       <title>Public speaking</title>
-      <link>http://localhost:1313/public-speaking/</link>
+      <link>https://rajhiray.github.io/public-speaking/</link>
       <pubDate>Sun, 06 Dec 2020 15:31:31 +0530</pubDate>
       
-      <guid>http://localhost:1313/public-speaking/</guid>
+      <guid>https://rajhiray.github.io/public-speaking/</guid>
       <description>PUBLIC SPEAKING </description>
     </item>
     
     <item>
       <title>About me</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://rajhiray.github.io/about/</link>
       <pubDate>Sat, 28 Nov 2020 19:59:11 +0200</pubDate>
       
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://rajhiray.github.io/about/</guid>
       <description>.avatar{float: left;margin: 0 15px 15px 0;width: 30%;}#certificats{width:100%;margin: 20px 0px;}#certificats td{vertical-align:top;}#contact{font-size: 6em;text-align: center;}I&amp;rsquo;m a passionate software developer with over 3 years of professional experience. Love to code and design algorithms for real world problems.  I’ve been working on technologies like C#,.NET Core, REST API, Windows Services, MS SQL Server, Kusto, SSIS and ADF ETL, Power Automate, Power App, Power BI.</description>
     </item>
     
