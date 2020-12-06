@@ -1,0 +1,57 @@
+{{ partial "head.html" . }}
+{{ partial "nav.html" . }}
+
+<main>
+	<article>
+		<header>
+			<h1>{{ .Title }}</h1>
+			{{ if .Params.isBlogpost }}  
+			<div><i class="fa fa-calendar"></i> <time>{{ .Date.Format "2 January 2006"}}</time></div>
+			<hr />
+			{{end}}
+		</header>
+		{{if isset .Params "image"}}
+			<img src="{{.Params.Image}}" width="100%" />
+			<br />
+		{{end}}
+		{{ .Content | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> ${3}` | safeHTML }}    
+		{{ if .Params.isBlogpost }}
+		<hr/>  
+		<p>If you find this blog post useful and you think it's worth to share this idea with others, <strong>please don't hesitate to use these buttons below</strong> 👇</p>	
+		<div class="addthis_inline_share_toolbox"></div>
+		{{end}}
+	</article>
+	{{ $related := .Site.RegularPages.Related . | first 3 }}
+	{{ with $related }}
+	<h3>See Also</h3>
+	<div class="row">
+		{{ range . }}
+			{{if isset .Params "image" }}
+				{{ $original := .Resources.GetMatch (.Params.Image) }}
+				{{ .Scratch.Set "image" ($original.Fill "320x240") }}
+				{{ $image := .Scratch.Get "image" }}
+				<div class="col-md-4 col-sm-12">
+						<a href="{{ .RelPermalink }}" >
+						<div class="card">
+								<img class="card-img-top" src="{{$image.RelPermalink}}" alt="{{ .Title }}">
+								<div class="card-body">
+									<h5 class="card-title">{{ .Title }}</h5>											  
+								</div>
+							</div></a>
+				</div>		
+			{{end}}
+		{{ end }}
+	</div>
+	<br />
+	{{ end }}
+</main>
+
+<div id="bottom-nav" class="text-center center-block">
+	<a href=" {{ .Site.BaseURL }}" class="btn btn-default"><i class="fa fa-home"></i> Home</a>
+</div>
+{{ if .Params.isBlogpost }}  
+	{{ if .Site.DisqusShortname }}
+	  {{ template "_internal/disqus.html" . }}
+	{{ end }}
+{{end}}
+{{ partial "footer.html" . }}

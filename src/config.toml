@@ -1,0 +1,91 @@
+baseURL = "https://rajhiray.github.io/"
+relativeURLs = true
+languageCode = "en-us"
+title = "Raj Hiray Blog"
+theme = ["hugo-dynamic-tabs", "hugo-geo"]
+disqusShortname= "rajhiray-github-io"
+publishDir = "../"
+paginate = 5
+enableGitInfo = true
+[params]
+	profilepic = "images/7759991.jpg"
+	title = "RAJ HIRAY"
+	subtitle = "Natural born software developer"
+	header = "Think Twice Code Once"
+	#analytics = "UA-"
+	addThis = "ra-5a286b9b1c027c15"
+	
+	[[params.socialbuttons]]
+	faicon = "github"
+	url = "https://github.com/RajHiray"
+	title = "Check My Open Source Works"
+	
+	[[params.socialbuttons]]
+	faicon = "twitter"
+	url = "https://twitter.com/hiray_raj"
+	title = "Follow me on Twitter"
+		
+	[[params.socialbuttons]]
+	faicon = "linkedin"
+	url = "https://www.linkedin.com/in/rajendra-hiray-aa137010b/"
+	title = "Follow me on LinkedIn"
+
+	[[params.socialbuttons]]
+	faicon = "stack-overflow"
+	url = "https://stackoverflow.com/users/9295952/raj-hiray"
+	title = "Check my StackOverflow profile"
+	
+	#[[params.socialbuttons]]
+	#faicon = "rss"
+	#url = "/index.xml"	
+	#title = "Be up to date - subscribe to my rss feed channel"
+	
+	[[params.navlinks]]
+	name = "Blog"
+	url = ""
+
+	#[[params.navlinks]]
+	#name = "Projects"
+	#url = "projects/"
+
+	#[[params.navlinks]]
+	#name = "Public speaking"
+	#url = "public-speaking/"
+
+	[[params.navlinks]]
+	name = "About me"
+	url = "about/"
+
+[related]
+
+	# Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
+	threshold = 80
+
+	# To get stable "See also" sections we, by default, exclude newer related pages.
+	includeNewer = true
+
+	# Will lower case keywords in both queries and in the indexes.
+	toLower = false
+
+	[[related.indices]]
+	name  = "tags"
+	weight = 100
+	toLower = true
+
+[markup.goldmark.renderer]
+unsafe= true
+enableEmoji=true
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = false
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
