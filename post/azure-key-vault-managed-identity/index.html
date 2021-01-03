@@ -147,8 +147,10 @@
 <li>GO to <a href="https://portal.azure.com/">https://portal.azure.com/</a></li>
 <li>Search for <strong>App Services</strong> and Select your App Service.</li>
 <li>Navigate to <strong>Setting =&gt; Identity</strong></li>
-<li><strong>Set status to “On”</strong> it will generate object ID this id is unique id of resource which we will use to provide access of different resources for app service/azure function.
-<br> IMAGE <br></li>
+<li><strong>Set status to “On”</strong> it will generate object ID this id is unique id of resource which we will use to provide access of different resources for app service/azure function.</li>
+<li>
+<a href="MSI-On.PNG"><img  src="MSI-On.PNG" alt="MSI-On"></a>
+</li>
 </ul>
 <p><strong>Step 2: Add Service Identity/Principal in Key vault access policy</strong></p>
 <ul>
@@ -157,13 +159,17 @@
 <li>Add <strong>Access Policy.</strong>
 <ul>
 <li>Navigate to <strong>Setting =&gt; Access policies =&gt; + Add Access Policy.</strong></li>
-<li>IMAGE <br></li>
+<li>
+<a href="Add-Access-Policy.PNG"><img  src="Add-Access-Policy.PNG" alt="Add-Access-Policy"></a>
+</li>
 </ul>
 </li>
 <li>Add access policy from template or provide access level by manual.
 <ul>
 <li>Select <strong>principal</strong> =&gt; search App service by object Id (managed Identity) =&gt; Add</li>
-<li>IMAGE <br></li>
+<li>
+<a href="add-principal.PNG"><img  src="add-principal.PNG" alt="add-principal"></a>
+</li>
 </ul>
 </li>
 </ul>

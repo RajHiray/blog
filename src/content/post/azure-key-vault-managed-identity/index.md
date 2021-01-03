@@ -27,17 +27,17 @@ The managed identities for Azure resources feature in Azure Active Directory (Az
     * Search for __App Services__ and Select your App Service.
     * Navigate to __Setting => Identity__
     * __Set status to “On”__ it will generate object ID this id is unique id of resource which we will use to provide access of different resources for app service/azure function.
-    <br> IMAGE <br>
+    * ![MSI-On](MSI-On.PNG)
 
     __Step 2: Add Service Identity/Principal in Key vault access policy__
     * GO to https://portal.azure.com/
     * Search for __Key vault__ and Select your Key vault instance.
     * Add __Access Policy.__
         * Navigate to __Setting => Access policies => + Add Access Policy.__
-        * IMAGE <br>
+        * ![Add-Access-Policy](Add-Access-Policy.PNG)
     * Add access policy from template or provide access level by manual.
         * Select __principal__ => search App service by object Id (managed Identity) => Add
-        * IMAGE <br>
+        * ![add-principal](add-principal.PNG)
     
     __Step 3:  Code Level Implementation__
     * Add NuGet packages to your project.
