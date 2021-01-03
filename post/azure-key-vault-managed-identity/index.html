@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website#">   
+	<meta name="theme-color" content="#ffffff">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="How to configure Azure Key vault using Managed Identity.">   
+        
+    <meta property="article:published_time" content="2021-01-03">
+	<meta property="og:type" content="article">
+    
+	<meta property="og:locale" content="en_US">	
+	<meta property="og:url" content="https://rajhiray.github.io/post/azure-key-vault-managed-identity/">	
+	<meta property="og:title" content="Managed Identity Implementation of Azure Key Vault">
+	<meta property="og:image" content="https://rajhiray.github.io/post/azure-key-vault-managed-identity/Azure-key-vault-msi.png">
+    <meta property="og:description" content="How to configure Azure Key vault using Managed Identity.">
+    <meta property="og:site_name" content="Raj Hiray Blog">
+    
+    <meta property="og:tags" content="Azure">
+    
+    <meta property="og:tags" content="csharp">
+    
+    <meta property="og:tags" content="MSI">
+    
+    <meta property="og:tags" content="Azure-Active-Directory">
+    
+    <meta property="og:tags" content="Azure-Key-Vault">
+    
+	<meta property="twitter:card" content="summary_large_image" >
+	<meta property="twitter:image" content="https://rajhiray.github.io/post/azure-key-vault-managed-identity/Azure-key-vault-msi.png">
+	<meta property="twitter:title" content="Managed Identity Implementation of Azure Key Vault">	
+	<meta property="twitter:creator" content="@cezary_piatek">
+	<meta property="twitter:description" content="How to configure Azure Key vault using Managed Identity.">
+
+	<meta name="keywords" value="Azure, csharp, MSI, Azure-Active-Directory, Azure-Key-Vault" />
+    <meta name="generator" content="Hugo 0.78.2" />
+    <title>Managed Identity Implementation of Azure Key Vault &middot; Raj Hiray Blog</title>
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="https://rajhiray.github.io/css/style.css">
+    <link rel="stylesheet" href="https://rajhiray.github.io/lib/gifplayer/gifplayer.css">
+    
+    <link href="https://rajhiray.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Raj Hiray Blog" />
+        
+	<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+	<link rel="manifest" href="../../manifest.json">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/story-show-gallery@2/dist/ssg.min.css">
+    
+    
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top visible-xs">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+				<a class="navbar-brand" href="https://rajhiray.github.io/">RAJ HIRAY</a>
+			
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				
+				
+					<li><a href="https://rajhiray.github.io/">Blog</a></li>
+				
+					<li><a href="https://rajhiray.github.io/about/">About me</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div id="menu" class="hidden-xs col-sm-4 col-md-3">
+	<div id="menu-content" class="vertical-align">
+		
+			<h1 class="text-center"><a href="https://rajhiray.github.io/">RAJ HIRAY</a></h1>
+		
+		
+		
+			<small class="text-center center-block">Natural born software developer</small>
+		
+		
+		
+			<img id="profile-pic" src="https://rajhiray.github.io//images/7759991.jpg" alt="My Picture" class="img-circle center-block">
+		
+		<div id="social" class="text-center">
+			
+				<a href="https://github.com/RajHiray" title="Check My Open Source Works"><i class="fa fa-github fa-2x"></i></a>
+			
+				<a href="https://twitter.com/hiray_raj" title="Follow me on Twitter"><i class="fa fa-twitter fa-2x"></i></a>
+			
+				<a href="https://www.linkedin.com/in/rajendra-hiray-aa137010b/" title="Follow me on LinkedIn"><i class="fa fa-linkedin fa-2x"></i></a>
+			
+				<a href="https://stackoverflow.com/users/9295952/raj-hiray" title="Check my StackOverflow profile"><i class="fa fa-stack-overflow fa-2x"></i></a>
+			
+
+			
+		</div>
+		<div id="links" class="text-center">
+			
+			
+				<a href="https://rajhiray.github.io/">Blog</a>
+			
+				<a href="https://rajhiray.github.io/about/">About me</a>
+			
+		</div>
+	</div>
+</div>
+
+		<div id="content" class="col-xs-12 col-sm-8 col-md-9">
+			<div class="row">
+				<div id="post" class="col-sm-offset-1 col-sm-10 col-md-10 col-lg-8 ssg">
+
+<main>
+	<article>
+		<header>
+			<h1>Managed Identity Implementation of Azure Key Vault</h1>
+			
+		</header>
+		
+			<img src="Azure-key-vault-msi.png" width="100%" />
+			<br />
+		
+		<hr>
+<p>With any key/password store I always thought that the weak link was the credentials used to access it. If that single point of failure was compromised then all your secrets would be vulnerable. <code>Microsoft</code> have overcome this by creating the <code>Managed Identity</code>. A Managed Identity is generated by a resource within Azure and can be configured to access resources that use Azure AD for authentication.</p>
+<h2 id="managed-identity">Managed Identity<a href="#managed-identity" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<p>Managed identities for Azure resources is a feature of the <code>Azure Active Directory</code>.</p>
+<p>A common challenge when building cloud applications is how to manage the credentials in your code for authenticating to cloud services. Keeping the credentials secure is an important task. Ideally, the credentials never appear on developer workstations and aren&rsquo;t checked into source control. Azure Key Vault provides a way to securely store credentials, secrets, and other keys, but your code has to authenticate to Key Vault to retrieve them.</p>
+<p>The managed identities for Azure resources feature in Azure Active Directory (Azure AD) solves this problem. The feature provides Azure services with an automatically managed identity in Azure AD. <strong>You can use the identity to authenticate to any service that supports Azure AD authentication, including Key Vault, without any credentials in your code.</strong></p>
+<h2 id="implementation-of-managed-identity">Implementation of Managed Identity<a href="#implementation-of-managed-identity" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<ol>
+<li>
+<p><strong>How to use managed identities for App Service and Azure Functions</strong> <br>
+<strong>Step 1: Add a system-assigned/User-assigned identity</strong></p>
+<ul>
+<li>GO to <a href="https://portal.azure.com/">https://portal.azure.com/</a></li>
+<li>Search for <strong>App Services</strong> and Select your App Service.</li>
+<li>Navigate to <strong>Setting =&gt; Identity</strong></li>
+<li><strong>Set status to “On”</strong> it will generate object ID this id is unique id of resource which we will use to provide access of different resources for app service/azure function.
+<br> IMAGE <br></li>
+</ul>
+<p><strong>Step 2: Add Service Identity/Principal in Key vault access policy</strong></p>
+<ul>
+<li>GO to <a href="https://portal.azure.com/">https://portal.azure.com/</a></li>
+<li>Search for <strong>Key vault</strong> and Select your Key vault instance.</li>
+<li>Add <strong>Access Policy.</strong>
+<ul>
+<li>Navigate to <strong>Setting =&gt; Access policies =&gt; + Add Access Policy.</strong></li>
+<li>IMAGE <br></li>
+</ul>
+</li>
+<li>Add access policy from template or provide access level by manual.
+<ul>
+<li>Select <strong>principal</strong> =&gt; search App service by object Id (managed Identity) =&gt; Add</li>
+<li>IMAGE <br></li>
+</ul>
+</li>
+</ul>
+<p><strong>Step 3:  Code Level Implementation</strong></p>
+<ul>
+<li>Add NuGet packages to your project.
+<ul>
+<li><code>Microsoft.Azure.KeyVault</code></li>
+<li><code>Microsoft.Azure.Services.AppAuthentication</code></li>
+</ul>
+</li>
+<li>Code
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// Get Secret from key vault.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;kvName&quot;&gt;Key Vault Name&lt;/param&gt;
+/// &lt;param name=&quot;secretName&quot;&gt;Secret Name&lt;/param&gt;
+/// &lt;returns&gt; Secret value&lt;/returns&gt;
+static string GetSecretFromKeyVault(string kvName, string secretName)
+{
+    string result = string.Empty;
+    string keyVaultBaseUrl = &quot;https://{0}.vault.azure.net/&quot;;
+    var azureServiceTokenProvider = new AzureServiceTokenProvider();
+    var kvClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
+    result = kvClient.GetSecretAsync(string.Format(keyVaultBaseUrl, kvName), secretName).Result.Value;
+    return result;
+}        
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Local development</strong> <br>
+Local machines don&rsquo;t support managed identities for Azure resources. As a result, the <code>Microsoft.Azure.Services.AppAuthentication</code> library uses your developer credentials to run in your local development environment. When the solution is deployed to Azure, the library uses a managed identity to switch to an OAuth 2.0 client credential grant flow. This approach means you can test the same code locally and remotely without worry.
+For local development, <code>AzureServiceTokenProvider</code> fetches tokens using <strong>Visual Studio, Azure command-line interface (CLI), or Azure AD Integrated Authentication.</strong> Each option is tried sequentially and the library uses the first option that succeeds. If no option works, an <code>AzureServiceTokenProviderException</code> exception is thrown with detailed information.</p>
+<p><strong>Authenticating with Visual Studio</strong> <br>
+To authenticate by using Visual Studio:</p>
+<ol>
+<li>Sign in to Visual Studio and use <strong>Tools &gt; Options</strong> to open Options.</li>
+<li>Select <strong>Azure Service Authentication</strong>, choose an account for local development, and select OK.
+<ul>
+<li>IMAGE <br></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p>If you run into problems using Visual Studio, such as errors that involve the token provider file, carefully review the preceding steps.
+You may need to reauthenticate your developer token. To do so, select <strong>Tools &gt; Options</strong>, and then select <strong>Azure Service Authentication</strong>. Look for a <strong>Re-authenticate</strong> link under the selected account. Select it to authenticate.</p>
+<p><strong>References:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview">https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview</a></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/key-vault/general/service-to-service-authentication">https://docs.microsoft.com/en-us/azure/key-vault/general/service-to-service-authentication</a></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/app-service/overview-managed-identity?tabs=dotnet">https://docs.microsoft.com/en-us/azure/app-service/overview-managed-identity?tabs=dotnet</a></p>
+    
+		
+	</article>
+	
+	
+	<h3>See Also</h3>
+	<div class="row">
+		
+			
+				
+				
+				
+				<div class="col-md-4 col-sm-12">
+						<a href="../../post/azure-key-vault/" >
+						<div class="card">
+								<img class="card-img-top" src="../../post/azure-key-vault/azure-keyvault_hu502eb1ee10ebf3a92f529404e004e9c8_197974_320x240_fill_box_smart1_2.png" alt="Azure Key Vault Fundamentals">
+								<div class="card-body">
+									<h5 class="card-title">Azure Key Vault Fundamentals</h5>											  
+								</div>
+							</div></a>
+				</div>		
+			
+		
+	</div>
+	<br />
+	
+</main>
+
+<div id="bottom-nav" class="text-center center-block">
+	<a href=" https://rajhiray.github.io/" class="btn btn-default"><i class="fa fa-home"></i> Home</a>
+</div>
+
+						  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/story-show-gallery@2/dist/ssg.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  
+  
+  <script src="../../lib/gifplayer/jquery.gifplayer.js"></script>
+  <script>
+	   $(document).ready(function(){   
+		$("img[src$='_animated.png']").gifplayer({
+			label: "▶"
+		});
+	  });
+  </script>
+  <script src="https://rajhiray.github.io//js/App.js"></script>
+  
+  <script type="text/javascript">
+	var addthis_share = addthis_share || {}
+	addthis_share = {
+		passthrough : {
+			twitter: {
+				via: "cezary_piatek",
+				hashtags: "Azure,csharp,MSI,Azure-Active-Directory,Azure-Key-Vault"
+			}
+		}
+	}
+	</script> 
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a286b9b1c027c15" async></script>
+  
+  
+</body>
+</html>

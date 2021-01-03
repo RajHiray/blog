@@ -3,48 +3,83 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://rajhiray.github.io/tags/azure/</loc>
+    <lastmod>2021-01-03T19:52:17+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rajhiray.github.io/tags/azure-active-directory/</loc>
+    <lastmod>2021-01-03T19:52:17+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rajhiray.github.io/tags/azure-key-vault/</loc>
+    <lastmod>2021-01-03T19:52:17+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://rajhiray.github.io/categories/</loc>
-    <lastmod>2020-12-06T16:39:59+05:30</lastmod>
+    <lastmod>2021-01-03T19:52:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://rajhiray.github.io/post/configure-global-gitignore/</loc>
-    <lastmod>2020-12-06T16:39:59+05:30</lastmod>
+    <loc>https://rajhiray.github.io/tags/csharp/</loc>
+    <lastmod>2021-01-03T19:52:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://rajhiray.github.io/tags/git/</loc>
-    <lastmod>2020-12-06T16:39:59+05:30</lastmod>
+    <loc>https://rajhiray.github.io/post/azure-key-vault-managed-identity/</loc>
+    <lastmod>2021-01-03T19:52:17+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rajhiray.github.io/tags/msi/</loc>
+    <lastmod>2021-01-03T19:52:17+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://rajhiray.github.io/post/</loc>
-    <lastmod>2020-12-06T16:39:59+05:30</lastmod>
+    <lastmod>2021-01-03T19:52:17+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://rajhiray.github.io/categories/posts/</loc>
-    <lastmod>2020-12-06T16:39:59+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rajhiray.github.io/tags/productivity/</loc>
-    <lastmod>2020-12-06T16:39:59+05:30</lastmod>
+    <lastmod>2021-01-03T19:52:17+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://rajhiray.github.io/</loc>
-    <lastmod>2020-12-06T16:39:59+05:30</lastmod>
+    <lastmod>2021-01-03T19:52:17+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://rajhiray.github.io/tags/</loc>
-    <lastmod>2020-12-06T16:39:59+05:30</lastmod>
+    <lastmod>2021-01-03T19:52:17+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rajhiray.github.io/post/azure-key-vault/</loc>
+    <lastmod>2021-01-03T19:52:17+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rajhiray.github.io/post/configure-global-gitignore/</loc>
+    <lastmod>2020-12-06T18:31:52+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rajhiray.github.io/tags/git/</loc>
+    <lastmod>2020-12-06T18:31:52+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rajhiray.github.io/tags/productivity/</loc>
+    <lastmod>2020-12-06T18:31:52+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://rajhiray.github.io/tags/vs2019/</loc>
-    <lastmod>2020-12-06T16:39:59+05:30</lastmod>
+    <lastmod>2020-12-06T18:31:52+05:30</lastmod>
   </url>
   
   <url>

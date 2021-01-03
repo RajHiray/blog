@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website#">   
+	<meta name="theme-color" content="#ffffff">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="Azure Key vault Fundamentals">   
+        
+    <meta property="article:published_time" content="2020-12-27">
+	<meta property="og:type" content="article">
+    
+	<meta property="og:locale" content="en_US">	
+	<meta property="og:url" content="https://rajhiray.github.io/post/azure-key-vault/">	
+	<meta property="og:title" content="Azure Key Vault Fundamentals">
+	<meta property="og:image" content="https://rajhiray.github.io/post/azure-key-vault/azure-keyvault.png">
+    <meta property="og:description" content="Azure Key vault Fundamentals">
+    <meta property="og:site_name" content="Raj Hiray Blog">
+    
+    <meta property="og:tags" content="Azure">
+    
+    <meta property="og:tags" content="csharp">
+    
+    <meta property="og:tags" content="MSI">
+    
+    <meta property="og:tags" content="Azure-Key-Vault">
+    
+	<meta property="twitter:card" content="summary_large_image" >
+	<meta property="twitter:image" content="https://rajhiray.github.io/post/azure-key-vault/azure-keyvault.png">
+	<meta property="twitter:title" content="Azure Key Vault Fundamentals">	
+	<meta property="twitter:creator" content="@cezary_piatek">
+	<meta property="twitter:description" content="Azure Key vault Fundamentals">
+
+	<meta name="keywords" value="Azure, csharp, MSI, Azure-Key-Vault" />
+    <meta name="generator" content="Hugo 0.78.2" />
+    <title>Azure Key Vault Fundamentals &middot; Raj Hiray Blog</title>
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="https://rajhiray.github.io/css/style.css">
+    <link rel="stylesheet" href="https://rajhiray.github.io/lib/gifplayer/gifplayer.css">
+    
+    <link href="https://rajhiray.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Raj Hiray Blog" />
+        
+	<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+	<link rel="manifest" href="../../manifest.json">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/story-show-gallery@2/dist/ssg.min.css">
+    
+    
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top visible-xs">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+				<a class="navbar-brand" href="https://rajhiray.github.io/">RAJ HIRAY</a>
+			
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				
+				
+					<li><a href="https://rajhiray.github.io/">Blog</a></li>
+				
+					<li><a href="https://rajhiray.github.io/about/">About me</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div id="menu" class="hidden-xs col-sm-4 col-md-3">
+	<div id="menu-content" class="vertical-align">
+		
+			<h1 class="text-center"><a href="https://rajhiray.github.io/">RAJ HIRAY</a></h1>
+		
+		
+		
+			<small class="text-center center-block">Natural born software developer</small>
+		
+		
+		
+			<img id="profile-pic" src="https://rajhiray.github.io//images/7759991.jpg" alt="My Picture" class="img-circle center-block">
+		
+		<div id="social" class="text-center">
+			
+				<a href="https://github.com/RajHiray" title="Check My Open Source Works"><i class="fa fa-github fa-2x"></i></a>
+			
+				<a href="https://twitter.com/hiray_raj" title="Follow me on Twitter"><i class="fa fa-twitter fa-2x"></i></a>
+			
+				<a href="https://www.linkedin.com/in/rajendra-hiray-aa137010b/" title="Follow me on LinkedIn"><i class="fa fa-linkedin fa-2x"></i></a>
+			
+				<a href="https://stackoverflow.com/users/9295952/raj-hiray" title="Check my StackOverflow profile"><i class="fa fa-stack-overflow fa-2x"></i></a>
+			
+
+			
+		</div>
+		<div id="links" class="text-center">
+			
+			
+				<a href="https://rajhiray.github.io/">Blog</a>
+			
+				<a href="https://rajhiray.github.io/about/">About me</a>
+			
+		</div>
+	</div>
+</div>
+
+		<div id="content" class="col-xs-12 col-sm-8 col-md-9">
+			<div class="row">
+				<div id="post" class="col-sm-offset-1 col-sm-10 col-md-10 col-lg-8 ssg">
+
+<main>
+	<article>
+		<header>
+			<h1>Azure Key Vault Fundamentals</h1>
+			
+		</header>
+		
+			<img src="azure-keyvault.png" width="100%" />
+			<br />
+		
+		<hr>
+<p>You’ve probably heard some version of the story about a developer who mistakenly <code>checked in</code> his key/secrete to <code>source code.</code></p>
+<p>As developers we all understand and care about keeping dev and production secrets safe but managing those secrets on your own or especially in a team can be cumbersome.</p>
+<p><strong>Safeguarding Secrets In software Development</strong> <br>
+Most of us know it’s a best practice to keep secret settings like <strong>connection strings, domain passwords, or other credentials as a runtime configuration and outside the source code.</strong> <code>Azure Key Vault</code> provides a security location to safeguard keys and other secrets used in software development.</p>
+<h2 id="about-azure-key-vault">About Azure Key Vault<a href="#about-azure-key-vault" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<p>Azure Key Vault allows you to securely store and manage application credentials such as secrets, keys, and certificates in a central and secure cloud repository. <strong>Key Vault eliminates the need to store credentials in your applications.</strong> Your applications can authenticate to Key Vault at run time to retrieve credentials.
+Azure Key Vault helps solve the following problems:</p>
+<ul>
+<li><strong>Secrets Management</strong> - Azure Key Vault can be used to Securely store and tightly control access to tokens, passwords, certificates, API keys, and other secrets.</li>
+<li><strong>Key Management</strong> - Azure Key Vault can also be used as a Key Management solution. Azure Key Vault makes it easy to create and control the encryption keys used to encrypt your data.</li>
+<li><strong>Certificate Management</strong> - Azure Key Vault is also a service that lets you easily provision, manage, and deploy public and private Transport Layer Security/Secure Sockets Layer (TLS/SSL) certificates for use with Azure and your internal connected resources.</li>
+<li><strong>Hardware Security Modules</strong> – Secrets and keys can be protected by software, or <code>FIPS 140-2</code> Level 2 validated HSMs.</li>
+</ul>
+<h2 id="key-vault-authentication">Key Vault Authentication<a href="#key-vault-authentication" class="hanchor" ariaLabel="Anchor"> 🔗&#xFE0E;</a> </h2>
+<p>To do any operations with Key Vault, you first need to <code>authenticate</code> to it. There are three ways to authenticate to Key Vault:</p>
+<ul>
+<li><strong>Managed Identities for Azure Resources</strong>: When you deploy an app on a virtual machine in Azure, you can assign an identity to your virtual machine that has access to Key Vault. You can also assign identities to other Azure resources. The benefit of this approach is that the app or service isn&rsquo;t managing the rotation of the first secret. Azure automatically rotates the identity. I recommend this approach as a best practice.</li>
+<li><strong>Service Principal and Certificate</strong>: You can use a service principal and an associated certificate that has access to Key Vault. I don&rsquo;t recommend this approach because the application owner or developer must rotate the certificate.</li>
+<li><strong>Service Principal and Secret</strong>: Although you can use a service principal and a secret to authenticate to Key Vault, I don&rsquo;t recommend it. It&rsquo;s hard to automatically rotate the bootstrap secret that&rsquo;s used to authenticate to Key Vault.</li>
+</ul>
+<p>As an administrator, you can tightly control which users and applications can access your key vault and you can limit and audit the operations they perform.</p>
+    
+		
+	</article>
+	
+	
+	<h3>See Also</h3>
+	<div class="row">
+		
+			
+				
+				
+				
+				<div class="col-md-4 col-sm-12">
+						<a href="../../post/azure-key-vault-managed-identity/" >
+						<div class="card">
+								<img class="card-img-top" src="../../post/azure-key-vault-managed-identity/Azure-key-vault-msi_hu12537978568633259328d210b511abb8_90875_320x240_fill_box_smart1_2.png" alt="Managed Identity Implementation of Azure Key Vault">
+								<div class="card-body">
+									<h5 class="card-title">Managed Identity Implementation of Azure Key Vault</h5>											  
+								</div>
+							</div></a>
+				</div>		
+			
+		
+	</div>
+	<br />
+	
+</main>
+
+<div id="bottom-nav" class="text-center center-block">
+	<a href=" https://rajhiray.github.io/" class="btn btn-default"><i class="fa fa-home"></i> Home</a>
+</div>
+
+						  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+  
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/story-show-gallery@2/dist/ssg.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  
+  
+  <script src="../../lib/gifplayer/jquery.gifplayer.js"></script>
+  <script>
+	   $(document).ready(function(){   
+		$("img[src$='_animated.png']").gifplayer({
+			label: "▶"
+		});
+	  });
+  </script>
+  <script src="https://rajhiray.github.io//js/App.js"></script>
+  
+  <script type="text/javascript">
+	var addthis_share = addthis_share || {}
+	addthis_share = {
+		passthrough : {
+			twitter: {
+				via: "cezary_piatek",
+				hashtags: "Azure,csharp,MSI,Azure-Key-Vault"
+			}
+		}
+	}
+	</script> 
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a286b9b1c027c15" async></script>
+  
+  
+</body>
+</html>
