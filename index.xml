@@ -64,7 +64,7 @@ For example you are using Visual Studio 2019 IDE, VS19 will create .vs folder in
       <pubDate>Sat, 28 Nov 2020 19:59:11 +0200</pubDate>
       
       <guid>https://rajhiray.github.io/about/</guid>
-      <description>.avatar{float: left;margin: 0 15px 15px 0;width: 30%;}#certificats{width:100%;margin: 20px 0px;}#certificats td{vertical-align:top;}#contact{font-size: 6em;text-align: center;}I&amp;rsquo;m a passionate software developer with over 3 years of professional experience. Love to code and design algorithms for real world problems.  I’ve been working on technologies like C#,.NET Core, REST API, Windows Services, MS SQL Server, Kusto, SSIS and ADF ETL, Power Automate, Power App, Power BI.</description>
+      <description>.avatar{float: left;margin: 0 15px 15px 0;width: 30%;}#certificats{table-layout: fixed;width:100%;margin: 20px 0px;}#certificats td{vertical-align:top;}#contact{font-size: 6em;text-align: center;}I&amp;rsquo;m a passionate software developer with over 3 years of professional experience. Love to code and design algorithms for real world problems.  I’ve been working on technologies like C#,.NET Core, REST API, Windows Services, MS SQL Server, Kusto, SSIS and ADF ETL, Power Automate, Power App, Power BI.</description>
     </item>
     
   </channel>
