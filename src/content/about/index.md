@@ -30,9 +30,12 @@ date: 2020-11-28T19:59:11+02:00
 I'm a passionate software developer with over 3 years of professional experience. Love to code and design algorithms for real world problems.
 </br></br>
 I’ve been working on technologies like C#,.NET Core, REST API, Windows Services, MS SQL Server, Kusto, SSIS and ADF ETL, Power Automate, Power App, Power BI.
-<br/><br/>
-In my spare time, I blog about `.NET`,`DevOps` and `Azure Cloud` related topics. __I'm a huge fan of automation and enthusiast of `software craftsmanship`, `clean code` and `domain driven design`.__ 
 
+ __I'm a huge fan of automation and enthusiast of `software craftsmanship`, `clean code` and `domain driven design`.__
+
+<br/><br/>
+I have decided to open down my thoughts about `.NET`,`DevOps` and `Azure Cloud` related topics.
+I have just started writing blogs! and really enjoying it!
 
 <div id="contact">
 <a href="" id="mailaddress"><i class="fa fa-envelope-square"></i></a>
@@ -54,7 +57,3 @@ document.addEventListener("DOMContentLoaded", function(){
     $("#mailaddress").attr("href", "mailto:" + "raj.hiray" + "@outlook" + ".com");
 });
 </script>
-
-
-
-
