@@ -44,6 +44,7 @@ In my spare time, I blog about `.NET`,`DevOps` and `Azure Cloud` related topics.
 <table id="certificats">
 <tr>
 <td><img src="AZ-900.png"/></td>
+<td><img src="DP-900.png"/></td>
 <td><img src="AZ-203.jpg"/></td>
 </tr>
 </table>
