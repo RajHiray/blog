@@ -8,12 +8,12 @@ date: 2020-11-28T19:59:11+02:00
         margin: 0 15px 15px 0;
         width: 30%;
     }
-    #certificats{
+    .certificats{
         table-layout: fixed;
         width:100%;
         margin: 20px 0px;
     }
-    #certificats td{
+    .certificats td{
         vertical-align:top;
     }
 
@@ -43,13 +43,20 @@ I have just started writing blogs! and really enjoying it!
 <a href="https://www.linkedin.com/in/rajendra-hiray-aa137010b/"><i class="fa fa-linkedin"></i></a>
 </div>
 
+<table class="certificats level1">
+    <tr>
+        <td><img src="AZ-900.png"/></td>
+        <td><img src="DP-900.png"/></td>
+        <td><img src="AI-900.png"/></td>
+        <td><img src="PL-900.png"/></td>
+    </tr>
+</table>
 
-<table id="certificats">
-<tr>
-<td><img src="AZ-900.png"/></td>
-<td><img src="DP-900.png"/></td>
-<td><img src="AZ-203.jpg"/></td>
-</tr>
+<table class="certificats level2">
+    <tr>
+        <td><img src="AZ-104.png"/></td>
+        <td><img src="AZ-203.png"/></td>
+    </tr>
 </table>
 
 <script>
