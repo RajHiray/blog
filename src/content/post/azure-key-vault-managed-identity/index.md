@@ -1,7 +1,7 @@
 ---
 title: "Managed Identity Implementation of Azure Key Vault"
 description: "How to configure Azure Key vault using Managed Identity."
-date: 2021-01-03T17:12:30+05:30
+date: 2021-01-09T17:12:30+05:30
 draft: false
 tags: ["Azure", "csharp","MSI","Azure-Active-Directory","Azure-Key-Vault"]
 categories : ["posts"]
