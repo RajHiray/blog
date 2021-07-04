@@ -1,9 +1,9 @@
 ---
 title: "Contributing to Open Source Software"
-description: "Open Source"
-date: 2021-02-13T17:33:56+05:30
+description: "Contributing to Open Source Software"
+date: 2021-03-13T17:33:56+05:30
 draft: false
-tags: ["GIT", "Productivity"]
+tags: ["GIT", "Productivity","open-source"]
 categories : ["posts"]
 image: "osc.jpg"
 ---
@@ -53,7 +53,7 @@ You can also use one of the following resources to help you discover and contrib
   <li><a href="https://firstcontributions.github.io" target="_blank">First Contributions</a></li>
 </ul>
 
-## Wrapping up
+## Wrapping Up ##
 I hope you understand the importance of open source software and that you value its benefits. No matter what your reasons are for giving back to the open source community, just know that you are highly appreciated!
 
 Many projects can only thrive with support and contributions from developers like you.

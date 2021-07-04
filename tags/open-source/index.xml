@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>open-source on Raj Hiray Blog</title>
+    <link>https://rajhiray.github.io/tags/open-source/</link>
+    <description>Recent content in open-source on Raj Hiray Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 May 2021 15:23:26 +0530</lastBuildDate><atom:link href="https://rajhiray.github.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Get Email Alerts When COVID-19 Vaccines Become Available Near You</title>
+      <link>https://rajhiray.github.io/post/covid19-vaccine-tracker/</link>
+      <pubDate>Sun, 09 May 2021 15:23:26 +0530</pubDate>
+      
+      <guid>https://rajhiray.github.io/post/covid19-vaccine-tracker/</guid>
+      <description>The COVID-19 vaccination program in India was earlier available to people above 45 years of age but starting May 1st, anyone above the age of 18 years can get vaccinated. That said, vaccine availability remains an issue countrywide and it is cumbersome to manually check slots every few hours.
+Vaccinate India Site: Vaccinate India  The government’s official website cowin.gov.in  has a useful search section that allows you see the nearby vaccination centers in your city or zip code.</description>
+    </item>
+    
+    <item>
+      <title>Contributing to Open Source Software</title>
+      <link>https://rajhiray.github.io/post/contributing-to-open-source-software/</link>
+      <pubDate>Sat, 13 Mar 2021 17:33:56 +0530</pubDate>
+      
+      <guid>https://rajhiray.github.io/post/contributing-to-open-source-software/</guid>
+      <description>Why Contribute to Open Source? Contributing to open-source projects gives you an opportunity to volunteer your time to improve a project used by you and your community. This is probably one of the coolest aspects of programming.
+Why do people contribute to open source? Plenty of reasons!
+ Improve a project used by you It’s empowering to be able to make changes, even small ones You can learn a lot from the source code.</description>
+    </item>
+    
+  </channel>
+</rss>

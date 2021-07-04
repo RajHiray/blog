@@ -27,7 +27,7 @@ date: 2020-11-28T19:59:11+02:00
 
 <img class="avatar" src="author.jpg">
 
-I'm a passionate software developer with over 3 years of professional experience. Love to code and design algorithms for real world problems.
+I'm a passionate software developer with over 3 years of professional experience. Love to code and design algorithms, large scale distributed systems for real world problems.
 </br></br>
 I’ve been working on technologies like C#,.NET Core, REST API, Windows Services, MS SQL Server, Kusto, SSIS and ADF ETL, Power Automate, Power App, Power BI.
 
@@ -56,6 +56,12 @@ I have just started writing blogs! and really enjoying it!
     <tr>
         <td><img src="AZ-104.png"/></td>
         <td><img src="AZ-203.png"/></td>
+        <td><img src="AZ-500.png"/></td>
+    </tr>
+</table>
+<table class="certificats level3">
+    <tr>
+        <td><img src="AZ-400.png"/></td>
     </tr>
 </table>
 

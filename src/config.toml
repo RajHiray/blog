@@ -44,9 +44,9 @@ enableGitInfo = true
 	name = "Blog"
 	url = ""
 
-	#[[params.navlinks]]
-	#name = "Projects"
-	#url = "projects/"
+	[[params.navlinks]]
+	name = "Projects"
+	url = "projects/"
 
 	#[[params.navlinks]]
 	#name = "Public speaking"
